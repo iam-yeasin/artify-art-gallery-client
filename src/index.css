@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes:
+    light --default,
+    /* dark --prefersdark, */ cupcake;
+}
+
+/* Hero Slider Dots */
+.swiper-pagination {
+  bottom: 10px !important;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.35) !important;
+  opacity: 0.7 !important;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1 !important;
+  transform: scale(1.2);
+} 
