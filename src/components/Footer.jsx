@@ -60,7 +60,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Categories */}
+        {/* Art Categories */}
         <div>
           <h3 className="font-semibold text-white mb-4">Categories</h3>
           <div className="w-20 h-[1px] bg-white/40 mb-4"></div>
