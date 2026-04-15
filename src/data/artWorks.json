@@ -1,0 +1,82 @@
+[
+  {
+    "_id": 1,
+    "title": "Golden Horizon",
+    "artistName": "Ethan Clarke",
+    "category": "Painting",
+    "image": "https://images.unsplash.com/photo-1577398628395-4ebd1f36731b?...",
+    "likes": 88
+  },
+  {
+    "_id": 2,
+    "title": "Fragments of Silence",
+    "artistName": "Ava Thompson",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1583407723467-9b2d22504831?...",
+    "likes": 120
+  },
+  {
+    "_id": 3,
+    "title": "Chromatic Flow",
+    "artistName": "Liam Carter",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1594845281364-63dbe90f37f5?...",
+    "likes": 98
+  },
+  {
+    "_id": 4,
+    "title": "Echoes of Form",
+    "artistName": "Sophia Bennett",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1573221566340-81bdde00e00b?...",
+    "likes": 52
+  },
+  {
+    "_id": 5,
+    "title": "Neon Geometry",
+    "artistName": "Noah Mitchell",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1618331835717-801e976710b2?...",
+    "likes": 83
+  },
+  {
+    "_id": 6,
+    "title": "Urban Abstraction",
+    "artistName": "Isabella Reed",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?...",
+    "likes": 65
+  },
+  {
+    "_id": 7,
+    "title": "Broken Symmetry",
+    "artistName": "James Walker",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?...",
+    "likes": 67
+  },
+  {
+    "_id": 8,
+    "title": "Color Disruption",
+    "artistName": "Mia Collins",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1627111304529-6262752311ca?...",
+    "likes": 35
+  },
+  {
+    "_id": 9,
+    "title": "Visual Pulse",
+    "artistName": "Lucas Anderson",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1602188324312-e1cd6383d2fe?...",
+    "likes": 64
+  },
+  {
+    "_id": 10,
+    "title": "Abstract Dimensions",
+    "artistName": "Charlotte Evans",
+    "category": "Digital Art",
+    "image": "https://images.unsplash.com/photo-1544037118-737759b6d388?...",
+    "likes": 78
+  }
+]

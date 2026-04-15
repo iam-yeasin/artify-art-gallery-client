@@ -7,6 +7,7 @@ const HomePage = () => {
     <div>
       {/* Hero Slider Section */}
       <HeroSlider />
+      {/* FeaturedArtworks Section */}
       <FeaturedArtworks/>
     </div>
   );
