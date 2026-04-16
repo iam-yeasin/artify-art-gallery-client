@@ -32,7 +32,7 @@ const FeaturedArtworks = () => {
               <div className="flex justify-between items-center mt-3">
                 <p className="text-sm mt-1">{art.category}</p>
                 <p>
-                  {art.likes} <span className="text-3xl cursor-pointer">♡</span>
+                  {art.likes} <span className="text-3xl hover:text-rose-800 cursor-pointer">♡</span>
                 </p>
               </div>
 
@@ -41,7 +41,7 @@ const FeaturedArtworks = () => {
                   to={`/artwork/${art._id}`}
                   className="block text-center mt-4 bg-black text-white py-2 rounded hover:bg-stone-800 transition"
                 >
-                  View
+                  View Details
                 </Link>
               </div>
             </div>

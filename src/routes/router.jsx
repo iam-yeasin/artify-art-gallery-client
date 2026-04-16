@@ -8,6 +8,7 @@ import MyFavorites from "../pages/MyFavorites";
 import Login from "./../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
+import ArtworkDetails from "../pages/ArtworkDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/explore",
         element: <ExploreArtworks />,
+      },
+      {
+        path: "/artwork/:id",
+        element: <ArtworkDetails/>
       },
       {
         path: "/add-artwork", //private

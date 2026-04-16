@@ -5,7 +5,8 @@
     "artistName": "Ethan Clarke",
     "category": "Painting",
     "image": "https://images.unsplash.com/photo-1577398628395-4ebd1f36731b?...",
-    "likes": 88
+    "likes": 88,
+    "description": "Golden Horizon captures the quiet yet powerful transition between day and night, where warm amber tones dissolve into deeper shadows. The composition evokes a sense of stillness, inviting the viewer to pause and reflect on the passage of time. The artist uses layered textures and soft gradients to mimic the natural diffusion of light across a vast landscape, creating depth without overwhelming detail. There is a deliberate balance between abstraction and realism, allowing the viewer to interpret the scene through their own emotional lens. The glow at the center acts as a focal point, symbolizing hope, renewal, and the cyclical nature of existence. This piece resonates particularly well in minimal environments, where its warmth contrasts beautifully against neutral surroundings. It is not just a depiction of a sunset, but a meditation on endings that quietly give birth to new beginnings. The subtle interplay of light and shadow gives the artwork a timeless quality."
   },
   {
     "_id": 2,
@@ -13,7 +14,8 @@
     "artistName": "Ava Thompson",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1583407723467-9b2d22504831?...",
-    "likes": 120
+    "likes": 120,
+    "description": "Fragments of Silence explores the beauty hidden within stillness and absence. Through scattered geometric forms and muted tones, the artist constructs a visual language that speaks without words. Each fragment appears suspended in space, disconnected yet somehow part of a larger, invisible structure. The composition invites introspection, encouraging viewers to find meaning in what is not immediately obvious. The restrained color palette enhances the feeling of calm while maintaining a sense of tension between elements. This duality reflects the complexity of silence itself—both peaceful and unsettling. The artwork resonates strongly with modern audiences who seek moments of quiet in an increasingly chaotic world. Its minimal approach aligns with contemporary design sensibilities. Ultimately, this piece is less about what is seen and more about what is felt, offering a contemplative experience that evolves over time."
   },
   {
     "_id": 3,
@@ -21,7 +23,8 @@
     "artistName": "Liam Carter",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1594845281364-63dbe90f37f5?...",
-    "likes": 98
+    "likes": 98,
+    "description": "Chromatic Flow is a dynamic exploration of movement through color. The artist blends vivid hues into seamless transitions, creating a sense of motion that feels almost fluid. The composition draws the eye across the canvas, guiding it through waves of saturation and subtle tonal shifts. There is an organic rhythm to the piece, reminiscent of natural phenomena such as flowing water or shifting light. Despite its abstract nature, the artwork feels deeply intuitive, as if it mirrors internal emotional states. The interplay of warm and cool tones creates a visual dialogue that keeps the viewer engaged. This piece stands out for its ability to balance intensity with harmony, offering both energy and calm in equal measure. It is particularly effective in modern interiors, where it can serve as a bold focal point."
   },
   {
     "_id": 4,
@@ -29,7 +32,8 @@
     "artistName": "Sophia Bennett",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1573221566340-81bdde00e00b?...",
-    "likes": 52
+    "likes": 52,
+    "description": "Echoes of Form examines the repetition and transformation of shapes within a structured yet fluid environment. The artist constructs layered forms that appear to resonate with one another, creating a sense of visual echo. Each element seems to respond to the next, forming a continuous dialogue across the canvas. The restrained use of color emphasizes the importance of structure and composition, allowing the viewer to focus on relationships between shapes. There is a subtle tension between order and chaos, as the forms simultaneously align and diverge. This interplay gives the artwork a sense of depth and movement. The piece invites prolonged observation, revealing new patterns over time. It reflects how repetition can lead to variation and how structure can coexist with spontaneity in visual storytelling."
   },
   {
     "_id": 5,
@@ -37,7 +41,8 @@
     "artistName": "Noah Mitchell",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1618331835717-801e976710b2?...",
-    "likes": 83
+    "likes": 83,
+    "description": "Neon Geometry is a bold interplay of light, structure, and modern abstraction. The artist uses sharp lines and luminous colors to construct a visually striking composition that feels both digital and architectural. The neon accents cut through darkness, creating a sense of depth and perspective. There is a strong influence of urban environments, where artificial light defines space and mood. The geometric forms are precise yet expressive, reflecting a balance between technical control and artistic freedom. This piece captures the essence of contemporary digital art, where boundaries between physical and virtual realities blur. Its high contrast and vibrant tones make it an ideal focal point in modern interiors."
   },
   {
     "_id": 6,
@@ -45,7 +50,8 @@
     "artistName": "Isabella Reed",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?...",
-    "likes": 65
+    "likes": 65,
+    "description": "Urban Abstraction reflects the layered complexity of modern city life through fragmented visuals and textured overlays. The composition captures the rhythm of movement, structure, and unpredictability that defines urban environments. Shapes overlap and intersect, suggesting architecture, streets, and fleeting human presence without explicitly depicting them. The muted tones and subtle contrasts create a grounded atmosphere, allowing viewers to connect emotionally rather than visually alone. This piece invites interpretation, offering glimpses of familiarity while remaining abstract. It speaks to the experience of navigating contemporary spaces where clarity and chaos coexist. Urban Abstraction is both a reflection and a reinterpretation of city life."
   },
   {
     "_id": 7,
@@ -53,7 +59,8 @@
     "artistName": "James Walker",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/flagged/photo-1567934150921-7632371abb32?...",
-    "likes": 67
+    "likes": 67,
+    "description": "Broken Symmetry challenges traditional notions of balance by intentionally disrupting visual harmony. The composition appears structured at first glance, but closer inspection reveals subtle inconsistencies and shifts. These imperfections create tension and intrigue, encouraging viewers to question their expectations of order. The artwork plays with alignment, spacing, and proportion, creating a sense of controlled imbalance. This approach reflects the idea that perfection is often found in irregularity. The piece resonates with contemporary audiences who appreciate authenticity over precision. It stands as a reminder that asymmetry can be just as compelling as perfect form."
   },
   {
     "_id": 8,
@@ -61,7 +68,8 @@
     "artistName": "Mia Collins",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1627111304529-6262752311ca?...",
-    "likes": 35
+    "likes": 35,
+    "description": "Color Disruption explores the impact of sudden contrast within a controlled visual field. The artist introduces bursts of color that interrupt an otherwise cohesive palette, creating moments of surprise and energy. These disruptions draw attention and guide the viewer’s gaze across the composition. The balance between control and spontaneity is central to the piece, reflecting the unpredictable nature of creativity itself. The artwork feels alive, constantly shifting depending on how it is observed. It invites viewers to embrace unpredictability and find beauty in contrast. Color Disruption is both playful and thought-provoking."
   },
   {
     "_id": 9,
@@ -69,7 +77,8 @@
     "artistName": "Lucas Anderson",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1602188324312-e1cd6383d2fe?...",
-    "likes": 64
+    "likes": 64,
+    "description": "Visual Pulse captures rhythm through repetition and variation, creating a sense of movement within a static frame. The composition feels alive, as if it is breathing or vibrating with energy. Subtle changes in tone and spacing create a dynamic flow that draws the viewer deeper into the piece. The artwork reflects the pulse of modern life—fast, layered, and constantly evolving. Despite its energy, there is a sense of control that keeps the composition grounded. This balance between motion and stillness makes Visual Pulse both engaging and calming. It invites viewers to connect with the rhythm within themselves."
   },
   {
     "_id": 10,
@@ -77,6 +86,7 @@
     "artistName": "Charlotte Evans",
     "category": "Digital Art",
     "image": "https://images.unsplash.com/photo-1544037118-737759b6d388?...",
-    "likes": 78
+    "likes": 78,
+    "description": "Abstract Dimensions explores depth and perspective beyond physical boundaries. The artist constructs layers that appear to extend infinitely, challenging the viewer’s perception of space. The composition blends geometric precision with organic flow, creating a sense of expansion and immersion. Each layer interacts with the next, forming a complex yet harmonious structure. The piece invites viewers to look beyond the surface and consider multiple dimensions of interpretation. It reflects the idea that reality is not fixed but shaped by perception. Abstract Dimensions is both intellectually stimulating and visually captivating, making it a powerful addition to any modern collection."
   }
 ]
