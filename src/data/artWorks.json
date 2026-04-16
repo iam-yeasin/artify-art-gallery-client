@@ -2,8 +2,9 @@
   {
     "_id": 1,
     "title": "Golden Horizon",
-    "artistName": "Ethan Clarke",
+    "artistName": "Nathan Dumlao",
     "category": "Painting",
+    "displayPhoto":"https://images.unsplash.com/profile-1495427732560-fe5248ad6638?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     "image": "https://images.unsplash.com/photo-1577398628395-4ebd1f36731b?...",
     "likes": 88,
     "description": "Golden Horizon captures the quiet yet powerful transition between day and night, where warm amber tones dissolve into deeper shadows. The composition evokes a sense of stillness, inviting the viewer to pause and reflect on the passage of time. The artist uses layered textures and soft gradients to mimic the natural diffusion of light across a vast landscape, creating depth without overwhelming detail. There is a deliberate balance between abstraction and realism, allowing the viewer to interpret the scene through their own emotional lens. The glow at the center acts as a focal point, symbolizing hope, renewal, and the cyclical nature of existence. This piece resonates particularly well in minimal environments, where its warmth contrasts beautifully against neutral surroundings. It is not just a depiction of a sunset, but a meditation on endings that quietly give birth to new beginnings. The subtle interplay of light and shadow gives the artwork a timeless quality."
@@ -11,8 +12,9 @@
   {
     "_id": 2,
     "title": "Fragments of Silence",
-    "artistName": "Ava Thompson",
+    "artistName": "Jazmin Quaynor",
     "category": "Digital Art",
+    "displayPhoto":"https://images.unsplash.com/profile-1558257510461-80a62b7838c7?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     "image": "https://images.unsplash.com/photo-1583407723467-9b2d22504831?...",
     "likes": 120,
     "description": "Fragments of Silence explores the beauty hidden within stillness and absence. Through scattered geometric forms and muted tones, the artist constructs a visual language that speaks without words. Each fragment appears suspended in space, disconnected yet somehow part of a larger, invisible structure. The composition invites introspection, encouraging viewers to find meaning in what is not immediately obvious. The restrained color palette enhances the feeling of calm while maintaining a sense of tension between elements. This duality reflects the complexity of silence itself—both peaceful and unsettling. The artwork resonates strongly with modern audiences who seek moments of quiet in an increasingly chaotic world. Its minimal approach aligns with contemporary design sensibilities. Ultimately, this piece is less about what is seen and more about what is felt, offering a contemplative experience that evolves over time."
@@ -20,8 +22,9 @@
   {
     "_id": 3,
     "title": "Chromatic Flow",
-    "artistName": "Liam Carter",
+    "artistName": "Marius Girard",
     "category": "Digital Art",
+    "displayPhoto":"https://images.unsplash.com/profile-1597230395142-7d48a6d9f38fimage?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     "image": "https://images.unsplash.com/photo-1594845281364-63dbe90f37f5?...",
     "likes": 98,
     "description": "Chromatic Flow is a dynamic exploration of movement through color. The artist blends vivid hues into seamless transitions, creating a sense of motion that feels almost fluid. The composition draws the eye across the canvas, guiding it through waves of saturation and subtle tonal shifts. There is an organic rhythm to the piece, reminiscent of natural phenomena such as flowing water or shifting light. Despite its abstract nature, the artwork feels deeply intuitive, as if it mirrors internal emotional states. The interplay of warm and cool tones creates a visual dialogue that keeps the viewer engaged. This piece stands out for its ability to balance intensity with harmony, offering both energy and calm in equal measure. It is particularly effective in modern interiors, where it can serve as a bold focal point."
@@ -29,17 +32,19 @@
   {
     "_id": 4,
     "title": "Echoes of Form",
-    "artistName": "Sophia Bennett",
+    "artistName": "Maximilian Bungart",
     "category": "Digital Art",
-    "image": "https://images.unsplash.com/photo-1573221566340-81bdde00e00b?...",
-    "likes": 52,
+    "displayPhoto":"https://images.unsplash.com/profile-1776030767120-b0a8791165ef?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+    "image": "https://images.unsplash.com/photo-1775668019091-c4b1fe0174bd?q=80&w=689&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "likes": 79,
     "description": "Echoes of Form examines the repetition and transformation of shapes within a structured yet fluid environment. The artist constructs layered forms that appear to resonate with one another, creating a sense of visual echo. Each element seems to respond to the next, forming a continuous dialogue across the canvas. The restrained use of color emphasizes the importance of structure and composition, allowing the viewer to focus on relationships between shapes. There is a subtle tension between order and chaos, as the forms simultaneously align and diverge. This interplay gives the artwork a sense of depth and movement. The piece invites prolonged observation, revealing new patterns over time. It reflects how repetition can lead to variation and how structure can coexist with spontaneity in visual storytelling."
   },
   {
     "_id": 5,
-    "title": "Neon Geometry",
+    "title": "Vojtech Bruzek",
     "artistName": "Noah Mitchell",
     "category": "Digital Art",
+    "displayPhoto":"https://images.unsplash.com/profile-1618771972270-095e360c6adaimage?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
     "image": "https://images.unsplash.com/photo-1618331835717-801e976710b2?...",
     "likes": 83,
     "description": "Neon Geometry is a bold interplay of light, structure, and modern abstraction. The artist uses sharp lines and luminous colors to construct a visually striking composition that feels both digital and architectural. The neon accents cut through darkness, creating a sense of depth and perspective. There is a strong influence of urban environments, where artificial light defines space and mood. The geometric forms are precise yet expressive, reflecting a balance between technical control and artistic freedom. This piece captures the essence of contemporary digital art, where boundaries between physical and virtual realities blur. Its high contrast and vibrant tones make it an ideal focal point in modern interiors."
@@ -81,12 +86,33 @@
     "description": "Visual Pulse captures rhythm through repetition and variation, creating a sense of movement within a static frame. The composition feels alive, as if it is breathing or vibrating with energy. Subtle changes in tone and spacing create a dynamic flow that draws the viewer deeper into the piece. The artwork reflects the pulse of modern life—fast, layered, and constantly evolving. Despite its energy, there is a sense of control that keeps the composition grounded. This balance between motion and stillness makes Visual Pulse both engaging and calming. It invites viewers to connect with the rhythm within themselves."
   },
   {
-    "_id": 10,
+    "_id": 10,  
     "title": "Abstract Dimensions",
-    "artistName": "Charlotte Evans",
+    "artistName": "Chris Weiher",
     "category": "Digital Art",
-    "image": "https://images.unsplash.com/photo-1544037118-737759b6d388?...",
+    "displayPhoto":"https://images.unsplash.com/profile-1771509058241-9697a50f688bimage?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+    "image": "https://images.unsplash.com/photo-1776066361565-d0a6cac89c9b?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "likes": 78,
     "description": "Abstract Dimensions explores depth and perspective beyond physical boundaries. The artist constructs layers that appear to extend infinitely, challenging the viewer’s perception of space. The composition blends geometric precision with organic flow, creating a sense of expansion and immersion. Each layer interacts with the next, forming a complex yet harmonious structure. The piece invites viewers to look beyond the surface and consider multiple dimensions of interpretation. It reflects the idea that reality is not fixed but shaped by perception. Abstract Dimensions is both intellectually stimulating and visually captivating, making it a powerful addition to any modern collection."
+  },
+  {
+    "_id": 11,
+    "title": "Fragments of Silence",
+    "artistName": "Jazmin Quaynor",
+    "category": "Digital Art",
+    "displayPhoto":"https://images.unsplash.com/profile-1558257510461-80a62b7838c7?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+    "image": "https://images.unsplash.com/photo-1601319965590-cedb74d3af96?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "likes": 30,
+    "description": "Fragments of Silence explores the beauty hidden within stillness and absence. Through scattered geometric forms and muted tones, the artist constructs a visual language that speaks without words. Each fragment appears suspended in space, disconnected yet somehow part of a larger, invisible structure. The composition invites introspection, encouraging viewers to find meaning in what is not immediately obvious. The restrained color palette enhances the feeling of calm while maintaining a sense of tension between elements. This duality reflects the complexity of silence itself—both peaceful and unsettling. The artwork resonates strongly with modern audiences who seek moments of quiet in an increasingly chaotic world. Its minimal approach aligns with contemporary design sensibilities. Ultimately, this piece is less about what is seen and more about what is felt, offering a contemplative experience that evolves over time."
+  },
+  {
+    "_id": 12,
+    "title": "Fragments of Silence",
+    "artistName": "Vladimir Dudukalov",
+    "category": "Digital Art",
+    "displayPhoto":"https://images.unsplash.com/profile-1712263664220-1cab3b1bb9f3?w=150&dpr=1&crop=faces&bg=%23fff&h=150&auto=format&fit=crop&q=60&ixlib=rb-4.1.0",
+    "image": "https://images.unsplash.com/photo-1585597623838-911013c49aa0?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "likes": 30,
+    "description": "Fragments of Silence explores the beauty hidden within stillness and absence. Through scattered geometric forms and muted tones, the artist constructs a visual language that speaks without words. Each fragment appears suspended in space, disconnected yet somehow part of a larger, invisible structure. The composition invites introspection, encouraging viewers to find meaning in what is not immediately obvious. The restrained color palette enhances the feeling of calm while maintaining a sense of tension between elements. This duality reflects the complexity of silence itself—both peaceful and unsettling. The artwork resonates strongly with modern audiences who seek moments of quiet in an increasingly chaotic world. Its minimal approach aligns with contemporary design sensibilities. Ultimately, this piece is less about what is seen and more about what is felt, offering a contemplative experience that evolves over time."
   }
 ]

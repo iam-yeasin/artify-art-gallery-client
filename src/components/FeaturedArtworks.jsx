@@ -14,12 +14,12 @@ const FeaturedArtworks = () => {
         {artworks.map((art) => (
           <div
             key={art._id}
-            className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden"
+            className="bg-white rounded-xl"
           >
             <img
               src={art.image}
               alt={art.title}
-              className="w-full aspect-[5/6] object-cover"
+              className="w-full aspect-[5/6] object-cover cursor-pointer transition-transform duration-300 hover:scale-110 hover:rounded-xl"
             />
 
             <div className="p-5">
