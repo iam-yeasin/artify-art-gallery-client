@@ -11,7 +11,9 @@ const HomePage = () => {
       <HeroSlider />
       {/* FeaturedArtworks Section */}
       <FeaturedArtworks/>
+      {/* Top Artist Section */}
       <TopArtist/>
+      {/* Community Highligths */}
       <CommunityHighlights/>
     </div>
   );

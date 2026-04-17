@@ -19,25 +19,35 @@ const CommunityHighlights = () => {
           ))}
         </div>
 
-        <div className="space-y-6 italic bg-base-300 p-5 rounded-xl">
+        <div className="space-y-6 italic bg-base-300 py-18 px-5 rounded-xl">
           <div className="bg-base-200 p-5 rounded-xl shadow-sm">
-            <p>
-              “This platform completely changed how I showcase my art!”
-            </p>
+            <p>“This platform completely changed how I showcase my art!”</p>
             <h4 className="mt-3 font-semibold">— Sarah K.</h4>
           </div>
 
           <div className="bg-base-200 p-5 rounded-xl shadow-sm">
             <p>
-              “Amazing community and inspiring artworks everywhere.”
+              “A perfect place to connect with creative minds and grow
+              together.”
             </p>
             <h4 className="mt-3 font-semibold">— Alex M.</h4>
           </div>
 
           <div className="bg-base-200 p-5 rounded-xl shadow-sm">
             <p>
-              “I discovered so many talented artists here!”
+              “Every visit gives me new ideas and motivation to keep
+              creating.”
             </p>
+            <h4 className="mt-3 font-semibold">— Philip R.</h4>
+          </div>
+
+          <div className="bg-base-200 p-5 rounded-xl shadow-sm">
+            <p>“Amazing community and inspiring artworks everywhere.”</p>
+            <h4 className="mt-3 font-semibold">— Glann A.</h4>
+          </div>
+
+          <div className="bg-base-200 p-5 rounded-xl shadow-sm">
+            <p>“I discovered so many talented artists here!”</p>
             <h4 className="mt-3 font-semibold">— John D.</h4>
           </div>
         </div>
