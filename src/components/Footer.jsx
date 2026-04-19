@@ -1,11 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -143,7 +139,7 @@ const Footer = () => {
               <FaFacebookF />
             </a>
             <a href="#" className="hover:text-white transition">
-              <FaTwitter />
+              <BsTwitterX />
             </a>
             <a href="#" className="hover:text-white transition">
               <FaInstagram />
