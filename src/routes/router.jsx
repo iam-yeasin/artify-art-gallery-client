@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/artwork/:id",
-        element: <ArtworkDetails/>
+        element: <ArtworkDetails />,
       },
       {
         path: "/add-artwork", //private
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/*",
+        path: "*",
         element: <NotFound />,
       },
     ],
