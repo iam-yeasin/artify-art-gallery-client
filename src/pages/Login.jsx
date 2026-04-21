@@ -58,7 +58,17 @@ const Login = () => {
 
           <div className="divider">OR</div>
 
-          <button className="btn bg-black text-white w-full">
+          {/* Google Signin */}
+          <button
+            type="button"
+            className="flex items-center justify-center gap-3 rounded-sm cursor-pointer bg-black
+            text-white px-5 py-2 rounded-1g w-full font-semibold"
+          >
+            <img
+              src="https://www.svgrepo.com/show/475656/google-color.svg"
+              alt="google"
+              className="w-5 h-5"
+            />
             Continue with Google
           </button>
 
