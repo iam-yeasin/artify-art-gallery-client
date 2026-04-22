@@ -9,6 +9,7 @@ import Login from "./../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
 import ArtworkDetails from "../pages/ArtworkDetails";
+import PlainLayout from "../layouts/PlainLayout";
 
 const router = createBrowserRouter([
   {
@@ -47,11 +48,12 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
-      {
-        path: "*",
-        element: <NotFound />,
-      },
     ],
+  },
+  {
+    path: "*",
+    element: <PlainLayout />,
+    children: [{ path: "*", element: <NotFound /> }],
   },
 ]);
 
