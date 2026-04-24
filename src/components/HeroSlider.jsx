@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router";
 
 const HeroSlider = () => {
   return (
@@ -48,9 +49,11 @@ const HeroSlider = () => {
               Digital Art | Paintings | Illustrations
             </p>
 
-            <button className="mt-5 px-6 py-2 bg-gray-950 hover:bg-gray-50 hover:text-black transition rounded-lg italic cursor-pointer">
-              Explore Artworks
-            </button>
+            <Link to={"/explore"}>
+              <button className="mt-5 px-6 py-2 bg-gray-950 hover:bg-gray-50 hover:text-black transition rounded-lg italic cursor-pointer">
+                Explore Artworks
+              </button>
+            </Link>
           </div>
         </div>
       </SwiperSlide>

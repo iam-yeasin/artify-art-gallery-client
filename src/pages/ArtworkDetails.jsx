@@ -51,15 +51,30 @@ const ArtworkDetails = () => {
 
           <h3 className="text-3xl font-semibold mb-3">Details</h3>
 
-          <p className="text-gray-600 mb-4">By {artwork.artistName}</p>
-          <p className="mb-4">🎨 Category: {artwork.category}</p>
+          <div className="flex items-center gap-2">
+            <div>
+              <figure className="aspect-auto overflow-hidden cursor-pointer rounded-full">
+                <img
+                  src={artwork.displayPhoto || "/image-not-found.jpg"}
+                  alt={artwork.name}
+                  className="w-15 h-15 object-cover transition-transform duration-300 hover:scale-110"
+                />
+              </figure>
+            </div>
+            <p className="text-gray-600 font-semibold">{artwork.artistName}</p>
+          </div>
+          <p className="my-4">🎨 Category: {artwork.category}</p>
 
-          <p className="mb-4 flex items-center justify-start gap-2"><span className="text-3xl text-rose-800">♥</span> Likes: {artwork.likes}</p>
+          <p className="mb-4 flex items-center justify-start gap-2">
+            <span className="text-3xl text-rose-800">♥</span> Likes:{" "}
+            {artwork.likes}
+          </p>
 
           <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
-            Appreciate <span className="text-3xl hover:text-rose-800 cursor-pointer">
-              {/* ♡ */}
-              ♥</span>
+            Appreciate{" "}
+            <span className="text-3xl hover:text-rose-800 cursor-pointer">
+              {/* ♡ */}♥
+            </span>
           </button>
         </div>
       </div>
