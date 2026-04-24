@@ -52,15 +52,14 @@ const ArtworkDetails = () => {
           <h3 className="text-3xl font-semibold mb-3">Details</h3>
 
           <div className="flex items-center gap-2">
-            <div>
-              <figure className="aspect-auto overflow-hidden cursor-pointer rounded-full">
-                <img
-                  src={artwork.displayPhoto || "/image-not-found.jpg"}
-                  alt={artwork.name}
-                  className="w-15 h-15 object-cover transition-transform duration-300 hover:scale-110"
-                />
-              </figure>
-            </div>
+            <figure className="aspect-auto overflow-hidden cursor-pointer rounded-full">
+              <img
+                src={artwork.displayPhoto || "/image-not-found.jpg"}
+                alt={artwork.name}
+                className="w-15 h-15 object-cover transition-transform duration-300 hover:scale-110"
+              />
+            </figure>
+
             <p className="text-gray-600 font-semibold">{artwork.artistName}</p>
           </div>
           <p className="my-4">🎨 Category: {artwork.category}</p>
