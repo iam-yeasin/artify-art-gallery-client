@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import artworksData from "../data/artWorks.json";
 import { useEffect } from "react";
+import { PiBookmarkSimpleFill } from "react-icons/pi";
 
 const ArtworkDetails = () => {
   const { id } = useParams();
@@ -62,19 +63,35 @@ const ArtworkDetails = () => {
 
             <p className="text-gray-600 font-semibold">{artwork.artistName}</p>
           </div>
-          <p className="my-4">🎨 Category: {artwork.category}</p>
-
-          <p className="mb-4 flex items-center justify-start gap-2">
-            <span className="text-3xl text-rose-800">♥</span> Likes:{" "}
-            {artwork.likes}
+          <p className="my-4">
+            {" "}
+            <span className="font-semibold">✨ Total Artworks:</span>
+            {/* {totalArtwork} */}
+          </p>
+          <p className="my-4">
+            {" "}
+            <span className="font-semibold">🎨 Category:</span>{" "}
+            {artwork.category}
           </p>
 
-          <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
-            Appreciate{" "}
-            <span className="text-3xl hover:text-rose-800 cursor-pointer">
-              {/* ♡ */}♥
-            </span>
-          </button>
+          <p className="mb-4 flex items-center justify-start gap-2">
+            <span className="text-3xl text-rose-800">♥</span>{" "}
+            <span className="font-semibold">Likes:</span> {artwork.likes}
+          </p>
+
+          <div className="flex justify-between">
+            <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
+              Appreciate{" "}
+              <span className="text-3xl hover:text-rose-800 cursor-pointer">
+                {/* ♡ */}♥
+              </span>
+            </button>
+
+            <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
+              Add to Favorites{" "}
+              <PiBookmarkSimpleFill className="text-2xl hover:text-rose-800 cursor-pointer" />
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -38,7 +38,7 @@ const ExploreArtworks = () => {
 
               <div>
                 <Link
-                  to={`/artwork/${art._id}`}
+                  to={`/artwork-details/${art._id}`}
                   className="block text-center mt-4 bg-black text-white py-2 rounded hover:bg-stone-800 transition"
                 >
                   View Details

@@ -33,16 +33,27 @@ const Navbar = () => {
 
           <ul
             tabIndex={-1}
+            onClick={(e) => {
+              if (e.target.closest("a")) {
+                document.activeElement.blur();
+              }
+            }}  
             className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow z-50"
           >
             <li>
-              <MyLink to="/">Home</MyLink>
+              <MyLink to={"/"}>Home</MyLink>
             </li>
             <li>
-              <MyLink to="/services">Services</MyLink>
+              <MyLink to={"/explore"}>Explore</MyLink>
             </li>
             <li>
-              <MyLink to="/profile">Profile</MyLink>
+              <MyLink to={"/add-artwork"}>AddArt</MyLink>
+            </li>
+            <li>
+              <MyLink to={"/my-gallery"}>Gallery</MyLink>
+            </li>
+            <li>
+              <MyLink to={"/my-favorites"}>Favorites</MyLink>
             </li>
           </ul>
         </div>
