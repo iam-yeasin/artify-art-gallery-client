@@ -6,10 +6,11 @@ import { AuthContext } from "../context/AuthContext";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signInWithGoogle } = use(AuthContext);
+
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result);
+        console.log(result.user);
       })
       .catch((err) => {
         console.log(err);
