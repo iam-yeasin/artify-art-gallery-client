@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const { signInWithGoogle } = use(AuthContext);
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -60,6 +71,7 @@ const Login = () => {
 
           {/* Google Signin */}
           <button
+            onClick={handleGoogleSignIn}
             type="button"
             className="flex items-center justify-center gap-3 rounded-sm cursor-pointer bg-black
             text-white px-5 py-2 rounded-1g w-full font-semibold"
