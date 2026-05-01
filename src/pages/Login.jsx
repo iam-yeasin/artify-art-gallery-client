@@ -1,11 +1,29 @@
-import React, { use, useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { signInWithGoogle } = use(AuthContext);
+  const [email, setEmail] = useState("");
+  const { signInWithGoogle, signInUser } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log("Logged in:", result.user);
+        form.reset();
+        setEmail("");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -21,14 +39,17 @@ const Login = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="card w-full max-w-sm shadow-2xl bg-base-100">
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">Login</h2>
+          <h2 className="text-2xl font-bold text-center">Log in to ARTIFY</h2>
 
-          <form className="w-full">
+          <form onSubmit={handleLogin} className="w-full">
             {/* Email */}
             <div className="form-control w-full">
               <label className="label">Email</label>
               <input
+                name="email"
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 className="input input-bordered w-full"
                 required
@@ -41,6 +62,7 @@ const Login = () => {
 
               <div className="relative w-full">
                 <input
+                  name="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   className="input input-bordered w-full pr-12"
@@ -50,7 +72,7 @@ const Login = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>
@@ -75,7 +97,7 @@ const Login = () => {
             onClick={handleGoogleSignIn}
             type="button"
             className="flex items-center justify-center gap-3 rounded-sm cursor-pointer bg-black
-            text-white px-5 py-2 rounded-1g w-full font-semibold"
+            text-white px-5 py-2 rounded-lg w-full font-semibold"
           >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"

@@ -9,7 +9,7 @@ const Register = () => {
     <div className="flex justify-center items-center min-h-screen">
       <div className="card w-full max-w-sm shadow-2xl bg-base-100">
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">Register</h2>
+          <h2 className="text-2xl font-bold text-center">Register for ARTIFY</h2>
 
           <form className="w-full">
             <label className="label">Name</label>
@@ -63,7 +63,7 @@ const Register = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
                 >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </button>

@@ -1,4 +1,4 @@
-import React, { use } from "react";
+import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 import MyLink from "./MyLink";
@@ -9,7 +9,7 @@ import MyFavorites from "./../pages/MyFavorites";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user, loading, userSignOut } = use(AuthContext);
+  const { user, loading, userSignOut } = useContext(AuthContext);
 
   const handleSignOut = () => {
     userSignOut()
@@ -151,9 +151,11 @@ const Navbar = () => {
         ) : null}
 
         <div>
-          {loading ? (
-            <span className="loading loading-spinner text-black"></span>
-          ) : user ? (
+          {
+          // loading ? (
+          //   <span className="loading loading-spinner text-black"></span>
+          // ) :
+           user ? (
             <button className="btn ml-5 mr-5" onClick={handleSignOut}>
               Sign Out
             </button>

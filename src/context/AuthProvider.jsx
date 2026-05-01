@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
 
   const signInUser = (email, password) => {
     setLoading(true);
+    // console.log("NAVBAR:", { user, loading });
     return signInWithEmailAndPassword(auth, email, password);
   };
 
