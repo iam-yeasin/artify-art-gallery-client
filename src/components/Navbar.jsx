@@ -9,10 +9,10 @@ import MyFavorites from "./../pages/MyFavorites";
 import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user, loading, userSignOut } = useContext(AuthContext);
+  const { user, loading, signOutUser } = useContext(AuthContext);
 
   const handleSignOut = () => {
-    userSignOut()
+    signOutUser()
       .then((result) => {
         // toast.success("Signout Successful");
         console.log(result);
@@ -151,11 +151,9 @@ const Navbar = () => {
         ) : null}
 
         <div>
-          {
-          // loading ? (
-          //   <span className="loading loading-spinner text-black"></span>
-          // ) :
-           user ? (
+          {loading ? (
+            <span className="loading loading-spinner text-black"></span>
+          ) : user ? (
             <button className="btn ml-5 mr-5" onClick={handleSignOut}>
               Sign Out
             </button>

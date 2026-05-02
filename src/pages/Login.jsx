@@ -1,12 +1,14 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate  } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const { signInWithGoogle, signInUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,6 +21,7 @@ const Login = () => {
         console.log("Logged in:", result.user);
         form.reset();
         setEmail("");
+        navigate(location.state || "/", { replace: true });
       })
       .catch((err) => {
         console.error(err);
@@ -28,6 +31,7 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
+        navigate(location.state || "/", { replace: true });
         console.log(result.user);
       })
       .catch((err) => {
@@ -51,7 +55,8 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full pr-10  
+               focus:outline-none focus:ring-0 focus-visible:outline-none"
                 required
               />
             </div>
@@ -65,7 +70,7 @@ const Login = () => {
                   name="password"
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
-                  className="input input-bordered w-full pr-12"
+                  className="input input-bordered w-full pr-12 focus:outline-none focus:ring-0"
                   required
                 />
 

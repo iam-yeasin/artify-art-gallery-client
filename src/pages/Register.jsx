@@ -1,17 +1,62 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
+  // const [success, setSuccess] = useState(false);
+  // const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    // setError("");
+    // setSuccess(false);
+
+    createUser(email, password)
+      .then(async (result) => {
+        // console.log(result.user);
+        await updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo,
+        });
+
+        updateUser({
+          ...result.user,
+          displayName: name,
+          photoURL: photo,
+        });
+        // setSuccess(true);
+        e.target.reset();
+        navigate(location.state || "/", { replace: true });
+        console.log(result);
+      })
+      .catch((err) => {
+        // console.log(error);
+        // setError(err.message);
+        console.log(err);
+      });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen">
       <div className="card w-full max-w-sm shadow-2xl bg-base-100">
         <div className="card-body">
-          <h2 className="text-2xl font-bold text-center">Register for ARTIFY</h2>
+          <h2 className="text-2xl font-bold text-center">
+            Register for ARTIFY
+          </h2>
 
-          <form className="w-full">
+          <form onSubmit={handleRegister} className="w-full">
             <label className="label">Name</label>
             <div className="relative w-full">
               <input
@@ -41,9 +86,11 @@ const Register = () => {
             <div className="form-control w-full">
               <label className="label">Email</label>
               <input
+                name="email"
                 type="email"
+                className="input input-bordered w-full pr-10 
+               focus:outline-none focus:ring-0 focus-visible:outline-none"
                 placeholder="Email"
-                className="input input-bordered w-full"
                 required
               />
             </div>
@@ -54,9 +101,10 @@ const Register = () => {
 
               <div className="relative w-full">
                 <input
+                  name="password"
                   type={showPassword ? "text" : "password"}
+                  className="input input-bordered w-full pr-12 focus:outline-none focus:ring-0"
                   placeholder="Password"
-                  className="input input-bordered w-full pr-12"
                   required
                 />
 

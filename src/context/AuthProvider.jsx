@@ -18,29 +18,39 @@ const AuthProvider = ({ children }) => {
 
   const createUser = (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password).finally(() =>
+      setLoading(false),
+    );
+  };
+
+  const updateUser = (updatedUser) => {
+    setUser({ ...updatedUser });
   };
 
   const signInUser = (email, password) => {
     setLoading(true);
     // console.log("NAVBAR:", { user, loading });
-    return signInWithEmailAndPassword(auth, email, password);
+    return signInWithEmailAndPassword(auth, email, password).finally(() =>
+      setLoading(false),
+    );
   };
 
   const signInWithGoogle = () => {
     setLoading(true);
 
-    const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
+    // const provider = new GoogleAuthProvider();
+    GoogleProvider.setCustomParameters({
       prompt: "select_account",
     });
 
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, GoogleProvider).finally(() =>
+      setLoading(false),
+    );
   };
 
-  const userSignOut = () => {
+  const signOutUser = () => {
     setLoading(true);
-    return signOut(auth);
+    return signOut(auth).finally(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -57,7 +67,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     signInUser,
     signInWithGoogle,
-    userSignOut,
+    signOutUser,
+    updateUser,
     user,
     loading,
   };
