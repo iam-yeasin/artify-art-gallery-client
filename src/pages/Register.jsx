@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { updateProfile } from "firebase/auth";
+import toast from "react-hot-toast";
 
 const Register = () => {
   // const [success, setSuccess] = useState(false);
@@ -20,6 +21,19 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+    if (!passwordPattern.test(password)) {
+      // console.log("pass didn't match");
+      // setError(
+      //   "Use at least 6 characters with one uppercase and one lowercase letter.",
+      // );
+      toast.error(
+        "Use at least 6 characters with one uppercase and one lowercase letter.",
+      );
+      return;
+    }
+
+    // reset status success or error
     // setError("");
     // setSuccess(false);
 
@@ -37,13 +51,19 @@ const Register = () => {
           photoURL: photo,
         });
         // setSuccess(true);
+        toast.success("Signup Sucessful");
         e.target.reset();
-        navigate(location.state || "/", { replace: true });
+
+        const from = location.state?.from?.pathname || "/";
+        navigate(from, { replace: true });
+
+        console.log(location.state);
         console.log(result);
       })
       .catch((err) => {
         // console.log(error);
         // setError(err.message);
+        toast.error(err.message);
         console.log(err);
       });
   };

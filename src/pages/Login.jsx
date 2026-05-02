@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useLocation, useNavigate  } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,9 +22,12 @@ const Login = () => {
         console.log("Logged in:", result.user);
         form.reset();
         setEmail("");
+        toast.success("Signup Sucessful");
         navigate(location.state || "/", { replace: true });
+        console.log(location.state);
       })
       .catch((err) => {
+        toast.error(err.message);
         console.error(err);
       });
   };
@@ -31,10 +35,13 @@ const Login = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
+        toast.success("Login Sucessful");
         navigate(location.state || "/", { replace: true });
         console.log(result.user);
+        console.log(location.state);
       })
       .catch((err) => {
+        toast.error(err.message);
         console.log(err);
       });
   };
@@ -102,7 +109,7 @@ const Login = () => {
             onClick={handleGoogleSignIn}
             type="button"
             className="flex items-center justify-center gap-3 rounded-sm cursor-pointer bg-black
-            text-white px-5 py-2 rounded-lg w-full font-semibold"
+            text-white px-5 py-2 w-full font-semibold"
           >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"

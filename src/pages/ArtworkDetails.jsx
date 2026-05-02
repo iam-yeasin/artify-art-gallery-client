@@ -1,13 +1,15 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import artworksData from "../data/artWorks.json";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { PiBookmarkSimpleFill } from "react-icons/pi";
+import { AuthContext } from "../context/AuthContext";
 
 const ArtworkDetails = () => {
   const { id } = useParams();
+  const {user} = useContext(AuthContext);
 
   const artwork = artworksData.find((item) => item._id === parseInt(id));
-
+  const location = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,6 +20,10 @@ const ArtworkDetails = () => {
         <h2 className="text-2xl font-bold">Artwork Not Found</h2>
       </div>
     );
+  }
+
+  if (!user) {
+    return <Navigate state={location?.pathname} to="/login" />;
   }
 
   return (

@@ -12,10 +12,7 @@ const FeaturedArtworks = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-11/12 mx-auto italic">
         {artworks.map((art) => (
-          <div
-            key={art._id}
-            className="bg-white rounded-xl"
-          >
+          <div key={art._id} className="bg-white rounded-xl">
             <img
               src={art.image}
               alt={art.title}
@@ -32,7 +29,10 @@ const FeaturedArtworks = () => {
               <div className="flex justify-between items-center mt-3">
                 <p className="text-sm mt-1">{art.category}</p>
                 <p>
-                  {art.likes} <span className="text-3xl hover:text-rose-800 cursor-pointer">♡</span>
+                  {art.likes}{" "}
+                  <span className="text-3xl hover:text-rose-800 cursor-pointer">
+                    ♡
+                  </span>
                 </p>
               </div>
 
