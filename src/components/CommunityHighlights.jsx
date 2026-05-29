@@ -1,7 +1,12 @@
-import artworksData from "../data/artWorks.json";
+// import artworksData from "../data/artWorks.json";
+
+import { useLoaderData } from "react-router-dom";
 
 const CommunityHighlights = () => {
-  const artworks = artworksData.slice(0, 4);
+  const data = useLoaderData();
+  console.log(data);
+                      //slice
+  const artworks = data.slice(0, 4);
 
   return (
     <section className="w-11/12 mx-auto my-16">
@@ -35,8 +40,7 @@ const CommunityHighlights = () => {
 
           <div className="bg-base-200 p-5 rounded-xl shadow-sm">
             <p>
-              “Every visit gives me new ideas and motivation to keep
-              creating.”
+              “Every visit gives me new ideas and motivation to keep creating.”
             </p>
             <h4 className="mt-3 font-semibold">— Philip R.</h4>
           </div>

@@ -1,7 +1,9 @@
 import React from "react";
-import artworksData from "../data/artWorks.json";
+import { useLoaderData } from "react-router-dom";
+// import artworksData from "../data/artWorks.json";
 
 const TopArtist = () => {
+  const data = useLoaderData();
   const getTopArtists = (artworks) => {
     const artistMap = {};
 
@@ -32,10 +34,11 @@ const TopArtist = () => {
 
     return Object.values(artistMap)
       .sort((a, b) => b.totalLikes - a.totalLikes)
+      //slice
       .slice(0, 5);
   };
 
-  const topArtists = getTopArtists(artworksData);
+  const topArtists = getTopArtists(data);
 
   return (
     <section className="w-11/12 mx-auto py-12">
@@ -57,7 +60,7 @@ const TopArtist = () => {
             <div key={index} className="card bg-base-100 shadow-sm">
               <figure className="aspect-square overflow-hidden cursor-pointer">
                 <img
-                  src={artist.dp  || "/image-not-found.jpg"}
+                  src={artist.dp || "/image-not-found.jpg"}
                   alt={artist.name}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 />

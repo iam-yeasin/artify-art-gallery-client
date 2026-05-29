@@ -1,8 +1,15 @@
-import artworksData from "../data/artWorks.json";
+// import artworksData from "../data/artWorks.json";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const FeaturedArtworks = () => {
-  const artworks = artworksData.slice(0, 6);
+  const [artworks, setArtworks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/latest-data")
+      .then((res) => res.json())
+      .then((data) => setArtworks(data));
+  }, []);
 
   return (
     <section className="my-16 px-4">

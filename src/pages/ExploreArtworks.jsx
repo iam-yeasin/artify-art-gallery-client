@@ -1,8 +1,16 @@
-import artworksData from "../data/artWorks.json";
+import { useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
+// import artworksData from "../data/artWorks.json";
 import { Link } from "react-router-dom";
 
 const ExploreArtworks = () => {
-//   const artworks = artworksData.slice(0, 6);
+  //   const artworks = artworksData.slice(0, 6);
+  const data = useLoaderData();
+  console.log(data);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <section className="my-16 px-4">
@@ -11,11 +19,8 @@ const ExploreArtworks = () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-11/12 mx-auto italic">
-        {artworksData.map((art) => (
-          <div
-            key={art._id}
-            className="bg-white rounded-xl"
-          >
+        {data.map((art) => (
+          <div key={art._id} className="bg-white rounded-xl">
             <img
               src={art.image}
               alt={art.title}
@@ -32,7 +37,10 @@ const ExploreArtworks = () => {
               <div className="flex justify-between items-center mt-3">
                 <p className="text-sm mt-1">{art.category}</p>
                 <p>
-                  {art.likes} <span className="text-3xl hover:text-rose-800 cursor-pointer">♡</span>
+                  {art.likes}{" "}
+                  <span className="text-3xl hover:text-rose-800 cursor-pointer">
+                    ♡
+                  </span>
                 </p>
               </div>
 

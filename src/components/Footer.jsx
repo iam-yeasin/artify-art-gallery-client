@@ -154,7 +154,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-12 text-center text-gray-50 text-sm">
         {/* © 2025 WarmPaws. All rights reserved. */}
-        &copy; {new Date().getFullYear()} ARTIFY. All rights reserved.
+        &copy; ARTIFY {new Date().getFullYear()} . All Rights Reserved
       </div>
     </footer>
   );

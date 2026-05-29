@@ -10,6 +10,8 @@ import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
 import ArtworkDetails from "../pages/ArtworkDetails";
 import PlainLayout from "../layouts/PlainLayout";
+import PreventUrlHit from "./../components/PreventUrlHit";
+import UpdateArtwork from "../pages/UpdateArtwork";
 
 const router = createBrowserRouter([
   {
@@ -19,10 +21,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+        loader: () => fetch("http://localhost:3000/samples"),
       },
       {
         path: "/explore",
         element: <ExploreArtworks />,
+        loader: () => fetch("http://localhost:3000/samples"),
       },
       {
         path: "/artwork-details/:id",
@@ -33,8 +37,14 @@ const router = createBrowserRouter([
         element: <AddArtwork />,
       },
       {
-        path: "/my-gallery", //private
+        path: "/my-gallery/", //private
         element: <MyGallery />,
+      },
+      {
+        path: "/update-artwork-details/:id", //private
+        element: <UpdateArtwork />,
+        // loader: ({ params }) =>
+        //   fetch(`http://localhost:3000/samples/${params.id}`),
       },
       {
         path: "/my-favorites", //private
@@ -42,11 +52,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <PreventUrlHit>
+            <Login />
+          </PreventUrlHit>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <PreventUrlHit>
+            <Register />
+          </PreventUrlHit>
+        ),
       },
     ],
   },

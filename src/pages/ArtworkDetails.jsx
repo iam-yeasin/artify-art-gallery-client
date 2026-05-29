@@ -1,29 +1,53 @@
-import { Navigate, useLocation, useParams } from "react-router-dom";
-import artworksData from "../data/artWorks.json";
-import { useContext, useEffect } from "react";
+import {
+  Navigate,
+  // useLoaderData,
+  useLocation,
+  useParams,
+} from "react-router-dom";
+// import artworksData from "../data/artWorks.json";
+import { useContext, useEffect, useState } from "react";
 import { PiBookmarkSimpleFill } from "react-icons/pi";
 import { AuthContext } from "../context/AuthContext";
 
 const ArtworkDetails = () => {
+  const { user, loading } = useContext(AuthContext);
   const { id } = useParams();
-  const {user} = useContext(AuthContext);
+  const [artwork, setArtwork] = useState(null);
 
-  const artwork = artworksData.find((item) => item._id === parseInt(id));
+  // const data = useLoaderData();
+  // const artwork = data.individualResult;
+  // console.log(artwork);
+  // console.log(data);
+
+  // const artwork = data.find((item) => item._id === id);
   const location = useLocation();
   useEffect(() => {
+    if (!user) return;
+    fetch(`http://localhost:3000/samples/${id}`, {
+      headers: {
+        authorization: `Bearer ${user.accessToken}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setArtwork(data.individualResult);
+      });
     window.scrollTo(0, 0);
-  }, []);
+  }, [id, user]);
+
+  if (loading) return <div>Loading...</div>;
+
+  if (!user) {
+    return <Navigate state={location?.pathname} to="/login" />;
+  }
 
   if (!artwork) {
     return (
       <div className="text-center py-20">
-        <h2 className="text-2xl font-bold">Artwork Not Found</h2>
+        <h2 className="text-2xl font-bold">Loading artwork...</h2>
       </div>
     );
-  }
-
-  if (!user) {
-    return <Navigate state={location?.pathname} to="/login" />;
   }
 
   return (
@@ -50,9 +74,15 @@ const ArtworkDetails = () => {
         <div className="italic px-4 lg:px-0">
           <h1 className="text-3xl font-bold mb-3">{artwork.title}</h1>
 
-          <p className="text-gray-700 mb-6 leading-relaxed max-w-prose text-justify">
+          {/* <p className="text-gray-700 mb-6 leading-relaxed max-w-prose text-justify">
             {artwork.description || "No description available."}
-          </p>
+          </p> */}
+
+          <div className="h-[180px] overflow-y-auto mb-6">
+            <p className="text-gray-700 leading-relaxed max-w-prose text-justify pr-2">
+              {artwork.description || "No description available."}
+            </p>
+          </div>
 
           <div className="w-50 h-[1px] bg-gray-300/40 my-4"></div>
 
