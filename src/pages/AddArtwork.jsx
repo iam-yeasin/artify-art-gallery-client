@@ -24,6 +24,7 @@ const AddArtwork = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        authorization: `Bearer ${user.accessToken}`,
       },
       body: JSON.stringify(formData),
     })

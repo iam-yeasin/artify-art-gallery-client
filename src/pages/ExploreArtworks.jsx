@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 // import artworksData from "../data/artWorks.json";
 import { Link } from "react-router-dom";
@@ -7,19 +7,72 @@ const ExploreArtworks = () => {
   //   const artworks = artworksData.slice(0, 6);
   const data = useLoaderData();
   console.log(data);
+  const [searchData, setSearchData] = useState(data);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const search_text = e.target.search.value;
+    console.log(search_text);
+    setLoading(true);
+
+    fetch(
+      `http://localhost:3000/search?search=${encodeURIComponent(search_text)}`,
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setSearchData(data);
+        setLoading(false);
+      });
+  };
+
   return (
     <section className="my-16 px-4">
-      <h2 className="text-3xl font-bold mb-10 w-11/12 mx-auto italic">
-        Explore Artworks
-      </h2>
+      <div className="flex w-11/12 mx-auto mb-10">
+        <h2 className="text-3xl font-bold mb-10 w-11/12 mx-auto italic">
+          Explore Artworks
+        </h2>
+
+        <form onSubmit={handleSearch} className="flex items-center gap-2">
+          <label className="input focus:outline-none focus:ring-0 focus-within:outline-none focus-within:ring-0">
+            <svg
+              className="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                strokeLinejoin="round"
+                strokeLinecap="round"
+                strokeWidth="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+
+            <input
+              name="search"
+              type="search"
+              placeholder="Search"
+              className="focus:outline-none focus:ring-0"
+            />
+          </label>
+
+          <button className="btn btn-neutral w-auto">
+            {loading ? "Searching..." : "Search"}
+          </button>
+        </form>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-11/12 mx-auto italic">
-        {data.map((art) => (
+        {searchData.map((art) => (
           <div key={art._id} className="bg-white rounded-xl">
             <img
               src={art.image}

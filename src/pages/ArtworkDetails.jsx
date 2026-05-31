@@ -8,11 +8,13 @@ import {
 import { useContext, useEffect, useState } from "react";
 import { PiBookmarkSimpleFill } from "react-icons/pi";
 import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const ArtworkDetails = () => {
   const { user, loading } = useContext(AuthContext);
   const { id } = useParams();
   const [artwork, setArtwork] = useState(null);
+  const [refetch, setRefetch] = useState(false);
 
   // const data = useLoaderData();
   // const artwork = data.individualResult;
@@ -25,16 +27,58 @@ const ArtworkDetails = () => {
     if (!user) return;
     fetch(`http://localhost:3000/samples/${id}`, {
       headers: {
-        authorization: `Bearer ${user.accessToken}`,
+        authorization: `Bearer ${user.accessToken}`, //getIdToken()
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setArtwork(data.individualResult);
+      });
+    window.scrollTo(0, 0);
+  }, [id, user, refetch]);
+
+  const handleLikes = () => {
+    console.log("like button clicked");
+    fetch(`http://localhost:3000/samples/${id}/like`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${user.accessToken}`, //addedLater
       },
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        setArtwork(data.individualResult);
+        toast.success("Liked ❤️");
+        setRefetch(!refetch);
+        // setArtwork(data.individualResult);
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    window.scrollTo(0, 0);
-  }, [id, user]);
+  };
+
+  const handleFavorites = () => {
+    console.log("button clicked");
+    fetch(`http://localhost:3000/favorites`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        authorization: `Bearer ${user.accessToken}`, //addedLater
+      },
+      body: JSON.stringify({ ...artwork, addToFavorites: user.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Added To Favorite(s)");
+        // setArtwork(data.individualResult);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   if (loading) return <div>Loading...</div>;
 
@@ -116,16 +160,28 @@ const ArtworkDetails = () => {
           </p>
 
           <div className="flex justify-between">
-            <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
+            <button
+              onClick={handleLikes}
+              className="bg-black text-white px-6 py-2 rounded cursor-pointer hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2"
+            >
               Appreciate{" "}
-              <span className="text-3xl hover:text-rose-800 cursor-pointer">
+              <span
+                onClick={handleLikes}
+                className="text-3xl hover:text-rose-800 cursor-pointer"
+              >
                 {/* ♡ */}♥
               </span>
             </button>
 
-            <button className="bg-black text-white px-6 py-2 rounded hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2">
+            <button
+              onClick={handleFavorites}
+              className="bg-black text-white px-6 py-2 rounded cursor-pointer hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2"
+            >
               Add to Favorites{" "}
-              <PiBookmarkSimpleFill className="text-2xl hover:text-rose-800 cursor-pointer" />
+              <PiBookmarkSimpleFill
+                onClick={handleFavorites}
+                className="text-2xl hover:text-rose-800 cursor-pointer"
+              />
             </button>
           </div>
         </div>
