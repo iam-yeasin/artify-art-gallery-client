@@ -88,7 +88,7 @@ const UpdateArtwork = () => {
             type="name"
             defaultValue={artwork.artistName}
             readOnly
-            className="input input-bordered w-full rounded-xl focus:outline-none focus:ring-0 focus-visible:outline-none italic bg-gray-100 cursor-not-allowed"
+            className="input input-bordered w-full rounded-xl focus:outline-none focus:ring-0 focus-visible:outline-none italic dark:bg-gray-700 cursor-not-allowed"
           />
         </div>
 
@@ -100,7 +100,7 @@ const UpdateArtwork = () => {
             type="email"
             defaultValue={artwork.created_by}
             readOnly
-            className="input input-bordered w-full rounded-xl focus:outline-none focus:ring-0 focus-visible:outline-none italic bg-gray-100 cursor-not-allowed"
+            className="input input-bordered w-full rounded-xl focus:outline-none focus:ring-0 focus-visible:outline-none italic dark:bg-gray-700 cursor-not-allowed"
           />
         </div>
 

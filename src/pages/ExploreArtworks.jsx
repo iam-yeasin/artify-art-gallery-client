@@ -73,7 +73,7 @@ const ExploreArtworks = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-11/12 mx-auto italic">
         {searchData.map((art) => (
-          <div key={art._id} className="bg-white rounded-xl">
+          <div key={art._id} className="dark:bg-gray-800 rounded-xl">
             <img
               src={art.image}
               alt={art.title}

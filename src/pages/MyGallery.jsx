@@ -76,7 +76,7 @@ const MyGallery = () => {
         {arts.map((art) => (
           <div
             key={art._id}
-            className="bg-white rounded-xl shadow-md overflow-hidden"
+            className="dark:bg-gray-800 rounded-xl shadow-md overflow-hidden"
           >
             {/* Artwork image */}
             <img

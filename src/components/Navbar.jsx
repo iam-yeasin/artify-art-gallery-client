@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import MyLink from "./MyLink";
@@ -10,6 +10,19 @@ import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   const { user, loading, signOutUser } = useContext(AuthContext);
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    console.log(checked);
+
+    setTheme(checked ? "dark" : "light");
+  };
 
   const handleSignOut = () => {
     signOutUser()
@@ -149,7 +162,6 @@ const Navbar = () => {
             </div>
           </div>
         ) : null}
-
         <div>
           {loading ? (
             <span className="loading loading-spinner text-black"></span>
@@ -163,6 +175,12 @@ const Navbar = () => {
             </Link>
           )}
         </div>
+        <input
+          onChange={(e) => handleTheme(e.target.checked)}
+          type="checkbox"
+          defaultChecked={localStorage.getItem("theme") === "dark"}
+          className="toggle toggle-xl"
+        />
       </div>
     </div>
   );

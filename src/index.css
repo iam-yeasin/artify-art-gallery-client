@@ -2,8 +2,9 @@
 @plugin "daisyui" {
   themes:
     light --default,
-    /* dark --prefersdark, */ cupcake;
+    dark --prefersdark;
 }
+@custom-variant dark (&:where ([data-theme=dark], [data-theme=dark] *));
 
 /* Hero Slider Dots */
 .swiper-pagination {
@@ -23,4 +24,4 @@
   background: rgba(255, 255, 255, 0.7) !important;
   opacity: 1 !important;
   transform: scale(1.2);
-} 
+}
