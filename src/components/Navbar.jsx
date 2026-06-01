@@ -170,7 +170,7 @@ const Navbar = () => {
               Sign Out
             </button>
           ) : (
-            <Link to="/login" className="btn ml-5 mr-5">
+            <Link to="/auth/login" className="btn ml-5 mr-5">
               Login
             </Link>
           )}

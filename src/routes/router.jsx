@@ -12,6 +12,7 @@ import ArtworkDetails from "../pages/ArtworkDetails";
 import PlainLayout from "../layouts/PlainLayout";
 import PreventUrlHit from "./../components/PreventUrlHit";
 import UpdateArtwork from "../pages/UpdateArtwork";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,28 +31,48 @@ const router = createBrowserRouter([
       },
       {
         path: "/artwork-details/:id",
-        element: <ArtworkDetails />,
+        element: (
+          <PrivateRoute>
+            <ArtworkDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/add-artwork", //private
-        element: <AddArtwork />,
+        element: (
+          <PrivateRoute>
+            <AddArtwork />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-gallery/", //private
-        element: <MyGallery />,
+        element: (
+          <PrivateRoute>
+            <MyGallery />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-artwork-details/:id", //private
-        element: <UpdateArtwork />,
+        element: (
+          <PrivateRoute>
+            <UpdateArtwork />
+          </PrivateRoute>
+        ),
         // loader: ({ params }) =>
         //   fetch(`http://localhost:3000/samples/${params.id}`),
       },
       {
         path: "/my-favorites", //private
-        element: <MyFavorites />,
+        element: (
+          <PrivateRoute>
+            <MyFavorites />
+          </PrivateRoute>
+        ),
       },
       {
-        path: "/login",
+        path: "/auth/login",
         element: (
           <PreventUrlHit>
             <Login />
@@ -59,7 +80,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/register",
+        path: "/auth/register",
         element: (
           <PreventUrlHit>
             <Register />
