@@ -123,7 +123,7 @@ const ArtworkDetails = () => {
           </p> */}
 
           <div className="h-[180px] overflow-y-auto mb-6">
-            <p className="text-gray-700 leading-relaxed max-w-prose text-justify pr-2">
+            <p className="leading-relaxed max-w-prose text-justify pr-2">
               {artwork.description || "No description available."}
             </p>
           </div>
@@ -141,7 +141,7 @@ const ArtworkDetails = () => {
               />
             </figure>
 
-            <p className="text-gray-600 font-semibold">{artwork.artistName}</p>
+            <p className="font-semibold">{artwork.artistName}</p>
           </div>
           <p className="my-4">
             {" "}
