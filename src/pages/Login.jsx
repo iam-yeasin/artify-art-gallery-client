@@ -18,31 +18,31 @@ const Login = () => {
     const password = form.password.value;
 
     signInUser(email, password)
-      .then((result) => {
-        console.log("Logged in:", result.user);
+      .then(() => {
+        // console.log("Logged in:", result.user);
         form.reset();
         setEmail("");
         toast.success("Signup Sucessful");
         navigate(location.state || "/", { replace: true });
-        console.log(location.state);
+        // console.log(location.state);
       })
       .catch((err) => {
         toast.error(err.message);
-        console.error(err);
+        // console.error(err);
       });
   };
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
-      .then((result) => {
+      .then(() => {
         toast.success("Login Sucessful");
         navigate(location.state || "/", { replace: true });
-        console.log(result.user);
-        console.log(location.state);
+        // console.log(result.user);
+        // console.log(location.state);
       })
       .catch((err) => {
         toast.error(err.message);
-        console.log(err);
+        // console.log(err);
       });
   };
 

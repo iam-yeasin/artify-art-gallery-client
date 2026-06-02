@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const CommunityHighlights = () => {
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   const artworks = data.slice(0, 4);
 
   return (

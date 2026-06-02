@@ -26,7 +26,7 @@ const ArtworkDetails = () => {
   const location = useLocation();
   useEffect(() => {
     if (!user) return;
-    fetch(`http://localhost:3000/samples/${id}`, {
+    fetch(`https://artify-gallery-server-side.vercel.app/samples/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`, //getIdToken()
       },
@@ -40,8 +40,8 @@ const ArtworkDetails = () => {
   }, [id, user, refetch]);
 
   const handleLikes = () => {
-    console.log("like button clicked");
-    fetch(`http://localhost:3000/samples/${id}/like`, {
+    // console.log("like button clicked");
+    fetch(`https://artify-gallery-server-side.vercel.app/samples/${id}/like`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -49,20 +49,21 @@ const ArtworkDetails = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        // console.log(data);
         toast.success("Liked ❤️");
         setRefetch(!refetch);
         // setArtwork(data.individualResult);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        toast.error(err.message);
       });
   };
 
   const handleFavorites = () => {
-    console.log("button clicked");
-    fetch(`http://localhost:3000/favorites`, {
+    // console.log("button clicked");
+    fetch(`https://artify-gallery-server-side.vercel.app/favorites`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,13 +72,14 @@ const ArtworkDetails = () => {
       body: JSON.stringify({ ...artwork, addToFavorites: user.email }),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        // console.log(data);
         toast.success("Added To Favorite(s)");
         // setArtwork(data.individualResult);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        toast.error(err.message);
       });
   };
 
@@ -160,7 +162,7 @@ const ArtworkDetails = () => {
               <span className="font-semibold">Likes:</span> {artwork.likes}
             </p>
 
-            <div className="flex justify-between">
+            <div className="flex gap-48 mr-8">
               <button
                 onClick={handleLikes}
                 className="bg-black text-white px-6 py-2 rounded cursor-pointer hover:bg-stone-900 transition mb-5 flex items-center justify-center gap-2"

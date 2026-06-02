@@ -4,28 +4,33 @@ import { Link } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
+import toast from "react-hot-toast";
 
 const MyFavorites = () => {
   const { user, loading } = useContext(AuthContext);
   // const loadedData = useLoaderData();
   const [arts, setArts] = useState([]);
 
-  console.log(arts);
+  // console.log(arts);
   // console.log(user);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-favorites?email=${user.email}`, {
-        headers: {
-          authorization: `Bearer ${user.accessToken}`, //getIdToken()
+      fetch(
+        `https://artify-gallery-server-side.vercel.app/my-favorites?email=${user.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${user.accessToken}`, //getIdToken()
+          },
         },
-      })
+      )
         .then((res) => res.json())
         .then((data) => {
           setArts(data);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
+          toast.error(err.message);
         });
     }
   }, [user]);

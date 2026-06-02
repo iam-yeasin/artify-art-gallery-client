@@ -9,7 +9,7 @@ const ExploreArtworks = () => {
   //   const artworks = artworksData.slice(0, 6);
 
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
   const [searchData, setSearchData] = useState(data);
   const [loading, setLoading] = useState(false);
 
@@ -20,15 +20,15 @@ const ExploreArtworks = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     const search_text = e.target.search.value;
-    console.log(search_text);
+    // console.log(search_text);
     setLoading(true);
 
     fetch(
-      `http://localhost:3000/search?search=${encodeURIComponent(search_text)}`,
+      `https://artify-gallery-server-side.vercel.app/search?search=${encodeURIComponent(search_text)}`,
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setSearchData(data);
         setLoading(false);
       });
@@ -36,15 +36,15 @@ const ExploreArtworks = () => {
 
   const handleFilter = (e) => {
     const filter_cat = e.target.value;
-    console.log(filter_cat);
+    // console.log(filter_cat);
     setLoading(true);
 
     fetch(
-      `http://localhost:3000/category?category=${encodeURIComponent(filter_cat)}`,
+      `https://artify-gallery-server-side.vercel.app/category?category=${encodeURIComponent(filter_cat)}`,
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setSearchData(data);
         setLoading(false);
       });

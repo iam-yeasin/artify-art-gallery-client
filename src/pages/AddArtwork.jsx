@@ -15,12 +15,12 @@ const AddArtwork = () => {
       image: e.target.image.value,
       description: e.target.description.value,
       date: new Date(),
-      likes: 50,
+      likes: 0,
       artistName: user.displayName,
       displayPhoto: user.photoURL,
       created_by: user.email,
     };
-    fetch("http://localhost:3000/samples", {
+    fetch("https://artify-gallery-server-side.vercel.app/samples", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,13 +29,14 @@ const AddArtwork = () => {
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then(() => {
+        // console.log(data);
         toast.success("Your Artwork Uploaded!");
         navigate("/my-gallery");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        toast.error(err.message);
       });
   };
 

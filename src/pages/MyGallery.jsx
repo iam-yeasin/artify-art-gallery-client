@@ -4,27 +4,32 @@ import { Link } from "react-router";
 import Swal from "sweetalert2";
 import { AuthContext } from "../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
+import toast from "react-hot-toast";
 
 const MyGallery = () => {
   const { user, loading } = useContext(AuthContext);
   // const loadedData = useLoaderData();
   const [arts, setArts] = useState([]);
 
-  console.log(arts);
+  // console.log(arts);
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/my-artworks?email=${user.email}`, {
-        headers: {
-          authorization: `Bearer ${user.accessToken}`, //getIdToken()
+      fetch(
+        `https://artify-gallery-server-side.vercel.app/my-artworks?email=${user.email}`,
+        {
+          headers: {
+            authorization: `Bearer ${user.accessToken}`, //getIdToken()
+          },
         },
-      })
+      )
         .then((res) => res.json())
         .then((data) => {
           setArts(data);
         })
         .catch((err) => {
-          console.log(err);
+          // console.log(err);
+          toast.error(err.message);
         });
     }
   }, [user]);
@@ -40,12 +45,15 @@ const MyGallery = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/samples/${_id}`, {
+        fetch(`https://artify-gallery-server-side.vercel.app/samples/${_id}`, {
           method: "DELETE",
+          headers: {
+            authorization: `Bearer ${user.accessToken}`, // ✅ Add the token
+          },
         })
           .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
+          .then(() => {
+            // console.log(data);
 
             const remaining = arts.filter((art) => art._id !== _id);
             setArts(remaining);
@@ -57,7 +65,8 @@ const MyGallery = () => {
             });
           })
           .catch((err) => {
-            console.log(err);
+            // console.log(err);
+            toast.error(err.message);
           });
       }
     });

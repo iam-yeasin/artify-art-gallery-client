@@ -26,3 +26,6 @@ node_modules
 .env
 .env.*
 .artWorks.json
+api.json
+artWorks.json
+dist

@@ -7,7 +7,7 @@ const FeaturedArtworks = () => {
   const [artworks, setArtworks] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/latest-data")
+    fetch("https://artify-gallery-server-side.vercel.app/latest-data")
       .then((res) => res.json())
       .then((data) => setArtworks(data));
   }, []);

@@ -7,6 +7,7 @@ import AddArtwork from "./../pages/AddArtwork";
 import MyGallery from "./../pages/MyGallery";
 import MyFavorites from "./../pages/MyFavorites";
 import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, loading, signOutUser } = useContext(AuthContext);
@@ -19,20 +20,20 @@ const Navbar = () => {
   }, [theme]);
 
   const handleTheme = (checked) => {
-    console.log(checked);
+    // console.log(checked);
 
     setTheme(checked ? "dark" : "light");
   };
 
   const handleSignOut = () => {
     signOutUser()
-      .then((result) => {
-        // toast.success("Signout Successful");
-        console.log(result);
+      .then(() => {
+        toast.success("Signout Successful");
+        // console.log(result);
       })
       .catch((err) => {
-        // toast.error(error.message);
-        console.log(err);
+        toast.error(err.message);
+        // console.log(err);
       });
   };
 

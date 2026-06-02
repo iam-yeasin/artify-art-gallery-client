@@ -22,12 +22,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
-        loader: () => fetch("http://localhost:3000/samples"),
+        loader: () => fetch("https://artify-gallery-server-side.vercel.app/samples"),
       },
       {
         path: "/explore",
         element: <ExploreArtworks />,
-        loader: () => fetch("http://localhost:3000/samples"),
+        loader: () => fetch("https://artify-gallery-server-side.vercel.app/samples"),
       },
       {
         path: "/artwork-details/:id",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         // loader: ({ params }) =>
-        //   fetch(`http://localhost:3000/samples/${params.id}`),
+        //   fetch(`https://artify-gallery-server-side.vercel.app/samples/${params.id}`),
       },
       {
         path: "/my-favorites", //private

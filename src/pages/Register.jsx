@@ -57,14 +57,14 @@ const Register = () => {
         const from = location.state?.from?.pathname || "/";
         navigate(from, { replace: true });
 
-        console.log(location.state);
-        console.log(result);
+        // console.log(location.state);
+        // console.log(result);
       })
       .catch((err) => {
         // console.log(error);
         // setError(err.message);
         toast.error(err.message);
-        console.log(err);
+        // console.log(err);
       });
   };
 

@@ -15,7 +15,7 @@ const UpdateArtwork = () => {
   useEffect(() => {
     if (!user?.accessToken) return;
 
-    fetch(`http://localhost:3000/samples/${id}`, {
+    fetch(`https://artify-gallery-server-side.vercel.app/samples/${id}`, {
       headers: {
         authorization: `Bearer ${user.accessToken}`,
       },
@@ -25,7 +25,8 @@ const UpdateArtwork = () => {
         setArtwork(data.individualResult);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        toast.error(err.message);
       });
 
     window.scrollTo(0, 0);
@@ -55,21 +56,25 @@ const UpdateArtwork = () => {
       image: e.target.image.value,
       description: e.target.description.value,
     };
-    fetch(`http://localhost:3000/samples/${artwork._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${user.accessToken}`,
+    fetch(
+      `https://artify-gallery-server-side.vercel.app/samples/${artwork._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `Bearer ${user.accessToken}`,
+        },
+        body: JSON.stringify(formData),
       },
-      body: JSON.stringify(formData),
-    })
+    )
       .then((res) => res.json())
       .then(() => {
         toast.success("Successfully Updated!");
         navigate("/my-gallery");
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
+        toast.error(err.message);
       });
   };
 
