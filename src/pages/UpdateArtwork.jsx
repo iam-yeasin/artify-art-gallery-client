@@ -32,13 +32,12 @@ const UpdateArtwork = () => {
     window.scrollTo(0, 0);
   }, [id, user]);
 
-  if (loading) {
+  if (loading)
     return (
-      <p className="text-center mt-10 text-lg font-semibold">
-        Loading artwork...
-      </p>
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
     );
-  }
 
   if (!artwork) {
     return (
