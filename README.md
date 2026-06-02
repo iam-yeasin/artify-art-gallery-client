@@ -82,8 +82,8 @@ src/
 │   ├── Navbar/
 │   ├── Footer/
 │   ├── Banner/
-│   ├── ArtworkCard/
-│   ├── AuthForms/
+│   ├── MyLink/
+│   ├── firebase/
 │   └── ...
 ├── pages/
 │   ├── Home/
@@ -94,9 +94,10 @@ src/
 │   ├── MyFavorites/
 │   └── 404/
 ├── context/
-│   └── AuthContext.js
+│   └── AuthContext.jsx
+│   └── AuthProvider
 ├── hooks/
-│   └── useTheme.js
+│   └── usehooks.jsx
 └── App.js
 ```
 
