@@ -12,10 +12,13 @@ const TopArtist = () => {
     const oneWeekAgo = new Date();
     oneWeekAgo.setDate(now.getDate() - 7);
 
-    const recentArtworks = artworks.filter((art) => {
-      const artDate = new Date(art.date);
-      return !isNaN(artDate) && artDate >= oneWeekAgo && artDate <= now;
-    });
+    // const recentArtworks = artworks.filter((art) => {
+    const recentArtworks = Array.isArray(artworks)
+      ? artworks.filter((art) => {
+          const artDate = new Date(art.date);
+          return !isNaN(artDate) && artDate >= oneWeekAgo && artDate <= now;
+        })
+      : [];
 
     recentArtworks.forEach((art) => {
       if (!artistMap[art.artistName]) {
